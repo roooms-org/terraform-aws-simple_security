@@ -1,6 +1,6 @@
 resource "aws_security_group" "main" {
-  name        = "${var.config_name}_aws_security_group_public"
-  description = "${var.config_name}_aws_security_group_public"
+  name        = "${var.namespace}_aws_security_group_public"
+  description = "${var.namespace}_aws_security_group_public"
   vpc_id      = "${var.vpc_id}"
 
   ingress {
@@ -25,7 +25,7 @@ resource "aws_security_group" "main" {
   }
 
   tags {
-    Name        = "${var.config_name}_aws_security_group_public"
-    Config_Name = "${var.config_name}"
+    Name      = "${var.namespace}_aws_security_group_public"
+    Namespace = "${var.namespace}"
   }
 }
